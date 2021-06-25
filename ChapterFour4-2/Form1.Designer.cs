@@ -36,7 +36,6 @@ namespace ChapterFour4_2
             // 
             // btnAll
             // 
-            this.btnAll.Enabled = false;
             this.btnAll.Location = new System.Drawing.Point(667, 415);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(121, 23);
@@ -46,6 +45,7 @@ namespace ChapterFour4_2
             // 
             // grdBooks
             // 
+            this.grdBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdBooks.Location = new System.Drawing.Point(12, 12);
             this.grdBooks.Name = "grdBooks";
