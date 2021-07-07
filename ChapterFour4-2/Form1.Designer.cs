@@ -42,6 +42,7 @@ namespace ChapterFour4_2
             this.btnAll.TabIndex = 0;
             this.btnAll.Text = "Show All Records";
             this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(btnSQL_Click);
             // 
             // grdBooks
             // 

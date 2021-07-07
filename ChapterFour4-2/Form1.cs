@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Mason Holmes
+ * 7/7/21
+ * Program provides a GUI with keyboard layout for querying the SQL Books database. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,37 +31,11 @@ namespace ChapterFour4_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            //DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
-
-
-            DialogResult dialogResult = MessageBox.Show("Do you want to load the default Books Database?", "Choose Database", MessageBoxButtons.YesNo);
-            string dbname = "";
-            if (dialogResult == DialogResult.Yes)
-            {
-                dbname = "SQLBooksDB.mdf";
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                dbname = "norhtwind.mdf";
-            }
-            
-
-            string pathName = Path.GetFullPath(dbname);
-            MessageBox.Show(dbname);
-            MessageBox.Show(pathName);
-
-
-            //added follwing line to test issues with Conection String.  Make sure to do it Jacob's way for grading things
+            // changed connection string with the help of Jeff
             booksConnection = new SqlConnection("Server=(localdb)\\MSSQLLocalDB; AttachDBFilename = C:\\Users\\mholmes022726\\source\\repos\\ChapterFour4-2\\ChapterFour4-2\\bin\\Debug\\netcoreapp3.1\\SQLBooksDB.mdf; Integrated Security = true; Connection Timeout = 30");
-
-            // connect to the books database
-            //booksConnection = new SqlConnection($@"Data Source=.\SQLEXPRESS; AttachDbFileName={pathName}; Integrated Security=True; Connect Timeout=30; User Instance=True");
-            /*booksConnection = new SqlConnection($@"Data Source=.\SQLEXPRESS; 
-                                AttachDbFileName=C:\Users\mholmes022726\source\repos\ChapterFour4-2\ChapterFour4-2\bin\Debug\netcoreapp3.1\SQLBooksDB.mdf; 
-                                Integrated Security=True; Connect Timeout=10; User Instance=True");*/
-
-
+            
+            booksConnection.Open(); 
+            
             int w, lStart, l, t;
             int buttonHeight = 33; // found by trial and error
 
