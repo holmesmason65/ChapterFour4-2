@@ -31,9 +31,11 @@ namespace ChapterFour4_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // changed connection string with the help of Jeff
-            booksConnection = new SqlConnection("Server=(localdb)\\MSSQLLocalDB; AttachDBFilename = C:\\Users\\mholmes022726\\source\\repos\\ChapterFour4-2\\ChapterFour4-2\\bin\\Debug\\netcoreapp3.1\\SQLBooksDB.mdf; Integrated Security = true; Connection Timeout = 30");
-            
+            string path = System.IO.Path.GetFullPath("SQLBooksDB.mdf");
+            //MessageBox.Show(path);
+            booksConnection = new SqlConnection(@$"Data Source=.\SQLExpress; AttachDbFilename={path};
+                                                Integrated Security=True; Connect Timeout=30; User Instance=True;");
+
             booksConnection.Open(); 
             
             int w, lStart, l, t;
